@@ -1,0 +1,1 @@
+ordenedArray[index].push(list['tech']);
