@@ -57,7 +57,64 @@
   </head>
   <body>
     <script>
-      // COLOQUE SEU CÓDIGO AQUI
+
+      let h1 = document.createElement('h1');
+      h1.innerText = 'Exercício 5.2 - JavaScript DOM';
+      document.body.appendChild(h1);
+
+      let div = document.createElement('div');
+      div.className = 'main-content';
+      document.body.appendChild(div);
+
+      let center = document.createElement('div');
+      center.className = 'center-content';
+      div.appendChild(center);
+
+      let p = document.createElement('p');
+      p.innerText = 'Hello World!';
+      center.appendChild(p);
+
+      let left = document.createElement('div');
+      left.className = 'left-content';
+      div.appendChild(left);
+
+      let right = document.createElement('div');
+      right.className = 'right-content';
+      div.appendChild(right);
+
+      let img = document.createElement('img');
+      img.className = 'small-image';
+      img.src = 'https://picsum.photos/200';
+      left.appendChild(img);
+
+      let list = document.createElement('ul');
+      for (let index = 1; index <= 10; index += 1) {
+        let liList = document.createElement('li');
+        liList.innerText = index;
+        list.appendChild(liList);
+      }
+      right.appendChild(list);
+
+      for (let index = 0; index < 3; index += 1) {
+        let titulos = document.createElement('h3');
+        titulos.innerText = 'Olá';
+        div.appendChild(titulos);
+      }
+
+      h1.className = 'title';
+
+      let lastH3 = document.querySelectorAll('h3');
+
+      for (let index = 0; index < lastH3.length; index += 1) {
+        lastH3[index].className = 'description';
+      }
+
+      div.removeChild(left);
+
+      right.style.marginRight = 'auto';
+
+      
+
     </script>
   </body>
 </html>
