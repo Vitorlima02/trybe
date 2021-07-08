@@ -11,27 +11,32 @@ const myWebpage = document.getElementById('my-spotrybefy');
 function addTech (event) {
   let tech = document.querySelector('.tech');
   tech.classList.remove('tech');
-  event.target.add('.tech');
+  event.target.classList.add('.tech');
+  input.value = '';
 }
+firstDiv.addEventListener('click', addTech);
+secondDiv.addEventListener('lick', addTech);
+thirdDiv.addEventListener('click', addTech);
  /*Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 com a classe 'tech';*/
-function changeText(event) {
-  let boxText = document.querySelector('input');
-  let tech = document.querySelector('.tech');
+input.addEventListener('input', function() {
+let tech = document.querySelector('.tech');
   tech.innerText = event.target.value;
-}
+})
 
+myWebpage.addEventListener('dblclick', function() {
+  window.location.replace('https://github.com/Vitorlima02')
+})
 /* Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 redirecione para alguma página;*/
-function doubleClick(event) {
-  let top3 = document.querySelector('my-spotrybefy');
-  top3.addEventListener('doubleClick', newPage);
-}
 
-function newPage(event) {
-  let a = document.querySelector('my-spotrybefy');
-  a.href = 'https://github.com/Vitorlima02';
-}
+myWebpage.addEventListener('mouseover', function(event) {
+  event.target.style.color = 'red';
+})
+
+myWebpage.addEventListener('mouseout', function(event) {
+  event.target.style.color = 'unset';
+})
 
 
 /*1. Que tal redirecionar para seu portifólio?
