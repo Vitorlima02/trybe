@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Formulario Curriculo</title>
+</head>
+<body>
+  <header>
+    <h1>Formulario Curriculo</h1>
+  </header>
+  <form action="" method="get">
+    <fieldset>
+      <div class="content">
+        <label for="name">Nome:
+          <input type="text" maxlength="40" id="name" required>
+        </label>
+      </div>
+      <div class="content">
+        <label for="email">E-mail:</label>
+        <input type="email" maxlength="50" name="e-mail" id="email" required>
+      </div>
+      <div class="content">
+        <label for="cpf">CPF:</label>
+        <input type="text" maxlength="11" name="cpf" id="cpf" required>
+      </div>
+      <div class="content">
+        <label for="adress">Endereço:</label>
+        <input type="text" maxlength="200" name="adress" id="adress" required>
+      </div>
+      <div class="content">
+        <label for="city">Cidade:</label>
+        <input type="text" maxlength="28" name="city" id="city" required>
+      </div>
+      <div class="content">
+        <label for="">Estado:</label>
+        <select name="" id="state" required></select>
+      </div>
+      <div class="content">
+        <label for="type-house">Tipo de imovel:</label>
+        <input type="radio" name="type-house" value="apartament" id="type-apart" required><span>Apartamento</span>
+        <input type="radio" name="type-house" value="house" id="type-house" required><span>Casa</span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="content">
+        <label for="resume">Resumo</label>
+        <textarea name="resumo" maxlength="1000" id="resume" cols="30" rows="10" class="resume-area" required></textarea>
+      </div>
+      <div class="content">
+        <label for="function">Cargo:</label>
+        <input type="text" name="job" id="function">
+      </div>
+      <div class="content">
+        <label for="function-description">Descrição do cargo</label>
+        <input type="text" maxlength="500" name="job-description" id="function-description" required>
+      </div>
+      <div class="content">
+        <label for="date">Data de início</label>
+        <input type="text" data-validate-field="date" name="date-beginning" id="date" placeholder="DD/MM/YYYY" required>
+      </div>
+    </fieldset>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
