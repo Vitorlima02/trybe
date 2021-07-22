@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 2.5em;
+  margin: 15px 15px;
+}
+h1 {
+  font-size: 2em;
+}
+h2 {
+
+}
+
+img {
+    max-width: 100%;
+    margin: 10px 10px;
+}
+
+figure {
+    margin: 20px 0;
+}
+
+@media screen and (min-width: 600px) {
+ body {
+   background-color: lightblue;
+   font-size: 2em;
+ }
+
+ .content-text {
+  margin-bottom: 10px;
+ }
+
+ figure {
+   float: left;
+   margin-left: 4%;
+ }
+
+
+
+
+}
