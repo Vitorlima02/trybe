@@ -31,41 +31,48 @@
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <button id="aleatory">Random Color</button>
     </div>
     <script>
       const ESTADO_INICIAL = {
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
-      const store = Redux.createStore(reducer);
-      const btnNext = document.getElementById('next');
-      const btnPrev = document.getElementById('previous');
-      btnNext.addEventListener('click', () => {
-        store.dispatch({ type: 'NEXT-COLOR' });
-      });
-      btnPrev.addEventListener('click', () => {
-        store.dispatch({ type: 'PREVIOUS_COLOR' });
-      })
-
-      const nextColor = 'NEXT_COLOR';
-      const prevColor = 'PREVIOUS_COLOR';
+      
       const myReducer = (state = ESTADO_INICIAL, action) => {
         switch (action.type) {
-          case nextColor:
+          case 'NEXT_COLOR':
             return {
               ...state,
               index: state.index === state.colors.length - 1 ? 0 : state.index + 1,
             };
-          case prevColor:
-            return {
-              ...state,
-              index: state.index === 0 ? state.colors.length - 1 : state.index - 1,
-            };
-          default:
-            return state;
+            case 'PREVIOUS_COLOR':
+              return {
+                ...state,
+                index: state.index === 0 ? state.colors.length - 1 : state.index - 1,
+              };
+            default:
+              return state;
         }
-        
       }
+      const store = Redux.createStore(myReducer);
+      const btnNext = document.getElementById('next');
+      const btnPrev = document.getElementById('previous');
+      const btnRand = document.getElementById('aleatory');
+      btnNext.addEventListener('click', () => {
+        store.dispatch({ type: 'NEXT_COLOR' });
+      });
+      btnPrev.addEventListener('click', () => {
+        store.dispatch({ type: 'PREVIOUS_COLOR' });
+      })
+      btnRand.addEventListener('click', () => {
+        
+      })
+      store.subscribe(() => {
+        const { colors, index } = store.getState();
+        document.getElementById('value').innerHTML = colors[index];
+        document.getElementById('container').style.backgroundColor = colors[index];
+      })
     </script>
   </body>
 </html>
