@@ -1,9 +1,12 @@
 const fs = require('fs').promises;
 
-fs.writeFile('./meu-arquivo.txt', 'Meu TexTão')
-  .then(() => {
+async function main() {
+  try {
+    await fs.writeFile('./meu-arquivo.txt', 'Meu TexTão')
     console.log('Arquivo escrito com sucesso.');
-  })
-  .catch((err) => {
+  } catch (err) {
     console.error(`Falha ao escrever o arquivo ${err.message}`);
-  })
+  }
+}
+
+main();
